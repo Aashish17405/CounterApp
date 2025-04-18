@@ -37,7 +37,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull 1aashish17405/cd-counterapp:latest
-          sudo docker stop web-app || true
-          sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 aashish17405/cd-counterapp:latest
+          sudo docker pull aashish17405/cd-counterapp:latest
+          sudo docker stop cd-counterapp || true
+          sudo docker rm cd-counterapp || true
+          sudo docker run -d --name cd-counterapp -p 3000:3000 aashish17405/cd-counterapp:latest
